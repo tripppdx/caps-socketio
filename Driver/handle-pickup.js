@@ -1,13 +1,10 @@
 'use strict';
 
-const caps = require('../Hub/events.js');
-
 function handlePickup(payload) {
-  console.log(`DRIVER: picked up ${payload.orderId}`);
-  caps.emit('in-transit', payload);
-
-  console.log(`DRIVER: delievered ${payload.orderId}`);
-  caps.emit('delivered', payload);
+  console.log(`DRIVER: picked up ${payload.orderID}`);
+}
+function handleDelivered(payload) {
+  console.log(`DRIVER: delivered ${payload.orderID}`);
 }
 
-module.exports = handlePickup;
+module.exports = { handlePickup, handleDelivered };
