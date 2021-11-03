@@ -1,6 +1,6 @@
 'use strict';
 
-const logEvent = (event) => (payload) => {
+const logEvent = event => payload => {
   // log event??
   let log = {
     event,

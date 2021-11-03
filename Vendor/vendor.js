@@ -1,20 +1,22 @@
 'use strict';
 
-const caps = require('../Hub/events.js');
+const client = require('socket.io-client');
 const faker = require('faker');
 const logDelivery = require('./log-delivery.js');
 
-caps.on('delivered', logDelivery);
+const capsClient = client('http://localhost:3030/caps');
 
-function pickup(storeName) {
+capsClient.on('delivered', logDelivery);
+
+function pickup() {
   let payload = {
-    'store': storeName,
-    'orderId': faker.random.alphaNumeric(15),
-    'customer': faker.name.findName(),
-    'address': faker.address.streetAddress(),
+    store: '1-206-flowers',
+    orderID: faker.datatype.uuid(),
+    customer: faker.name.findName(),
+    address: `${faker.address.streetAddress()}, ${faker.address.city()}, ${faker.address.state()}`,
   };
 
-  caps.emit('pickup', payload);
+  capsClient.emit('pick-up', payload);
 }
 
-pickup('1-800-flowers');
+setInterval(pickup, 2000);
