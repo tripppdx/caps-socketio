@@ -2,7 +2,7 @@
 
 const { handlePickup, handleDelivered } = require('../Driver/handle-pickup.js');
 
-describe('testing hub server handler', () => {
+describe('testing driver client handler', () => {
   console.log = jest.fn();
   it('should log a mock pickup and payload', () => {
     let payload = {

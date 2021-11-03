@@ -2,7 +2,7 @@
 
 const logEvent = require('../Vendor/log-delivery.js');
 
-describe('testing hub server handler', () => {
+describe('testing vendor client handler', () => {
   console.log = jest.fn();
   it('should log a mock pick up and payload', () => {
     // let eventHandler = logEvent('test');

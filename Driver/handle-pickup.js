@@ -1,8 +1,5 @@
 'use strict';
 
-// const client = require('socket.io-client');
-// const capsClient = client('http://localhost:3030/caps');
-
 function handlePickup(payload) {
   console.log(`DRIVER: picked up ${payload.orderID}`);
 }

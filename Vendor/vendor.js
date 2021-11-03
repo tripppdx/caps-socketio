@@ -19,4 +19,5 @@ function pickup() {
   capsClient.emit('pick-up', payload);
 }
 
+pickup();
 setInterval(pickup, 2000);
