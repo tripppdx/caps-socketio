@@ -1,4 +1,4 @@
-# caps
+# caps-socketio
 
 Created by Harvey Lucas and Roop Hayer
 
